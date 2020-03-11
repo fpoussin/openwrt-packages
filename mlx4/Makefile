@@ -28,5 +28,11 @@ define KernelPackage/mlx4/description
   Mellanox Technologies ConnectX Ethernet
 endef
 
+define Build/Compile
+	$(MAKE) -C "$(LINUX_DIR)" \
+	$(MAKE_OPTS) \
+	modules
+endef
+
 $(eval $(call KernelPackage,mlx4))
 
