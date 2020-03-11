@@ -19,7 +19,7 @@ define KernelPackage/mlx4
        CONFIG_MLX4_CORE_GEN2=y \
        CONFIG_MLX4_DEBUG=y \
        CONFIG_MLX4_EN_DCB=y \
-        CONFIG_MLX4_EN=y
+       CONFIG_MLX4_EN=y
 
   AUTOLOAD:=$(call AutoProbe,mlx4)
 endef
@@ -31,6 +31,8 @@ endef
 define Build/Compile
 	$(MAKE) -C "$(LINUX_DIR)" \
 	$(MAKE_OPTS) \
+        CONFIG_MLX4_CORE=m \
+        CONFIG_MLX4_EN=m \
 	modules
 endef
 
