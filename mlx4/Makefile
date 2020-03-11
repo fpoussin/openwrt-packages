@@ -7,7 +7,7 @@ PKG_VERSION:=0.1.0
 PKG_RELEASE:=1
 
 define KernelPackage/mlx4
-  SUBMENU:=$(NETWORK_DEVICES_MENU)
+  SUBMENU:=Network Devices
   TITLE:=Mellanox Technologies 1/10/40Gbit Ethernet support
   DEPENDS:=@PCI_SUPPORT
   FILES:= \
